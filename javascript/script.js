@@ -1,9 +1,5 @@
 var currentIndex = 1;
-displaySlides(currentIndex);
-
-function setSlides(num) {
-    displaySlides(currentIndex += num);
-}
+var interval = 2000; // 2 seconds
 
 function displaySlides(num) {
     var x;
@@ -15,3 +11,12 @@ function displaySlides(num) {
     }
     slides[currentIndex - 1].style.display = "block";
 }
+
+currentIndex = 0;
+function setSlides() {
+    displaySlides(currentIndex += 1);
+}
+
+window.onload = function() {
+    setInterval(setSlides, interval);
+};
